@@ -1,6 +1,6 @@
 package lc2130;
 
-import LCListNode.ListNode;
+import LCClasses.ListNode;
 
 import java.util.ArrayList;
 import java.util.List;

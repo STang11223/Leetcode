@@ -1,6 +1,6 @@
 package lc2095;
 
-import LCListNode.ListNode;
+import LCClasses.ListNode;
 
 public class Run {
     public static void main(String[] args) {

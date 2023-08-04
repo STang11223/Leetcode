@@ -1,4 +1,4 @@
-package LCListNode;
+package LCClasses;
 
 public class ListNode {
     public int val;
