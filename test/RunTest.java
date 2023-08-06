@@ -1,6 +1,11 @@
 import lc31.Run;
 import lc34.Run34;
+import lc49.Run49;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,5 +31,23 @@ public class RunTest {
         assertArrayEquals(r.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8), new int[]{3, 4});
         assertArrayEquals(r.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 6), new int[]{-1, -1});
         assertArrayEquals(r.searchRange(new int[]{}, 0), new int[]{-1, -1});
+    }
+
+    @Test
+    void run49() {
+        Run49 r = new Run49();
+        // Works because both lists are sorted alphabetically. If any list has a string out of order, it will fail.
+        // In that case, both ret and compare should be recursively sorted and compared again
+        List<List<String>> ret = r.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
+        List<List<String>> compare = List.of(List.of("bat"), List.of("nat", "tan"), List.of("ate", "eat", "tea"));
+        assertTrue(ret.containsAll(compare));
+
+        ret = r.groupAnagrams(new String[]{""});
+        compare = List.of(List.of(""));
+        assertTrue(ret.containsAll(compare));
+
+        ret = r.groupAnagrams(new String[]{"a"});
+        compare = List.of(List.of("a"));
+        assertTrue(ret.containsAll(compare));
     }
 }
