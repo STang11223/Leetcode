@@ -1,4 +1,5 @@
 import lc31.Run;
+import lc34.Run34;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,5 +18,13 @@ public class RunTest {
         q = new int[]{1, 1, 5};
         new Run(q);
         assertArrayEquals(q, new int[]{1, 5, 1});
+    }
+
+    @Test
+    void run34() {
+        Run34 r = new Run34();
+        assertArrayEquals(r.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8), new int[]{3, 4});
+        assertArrayEquals(r.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 6), new int[]{-1, -1});
+        assertArrayEquals(r.searchRange(new int[]{}, 0), new int[]{-1, -1});
     }
 }
