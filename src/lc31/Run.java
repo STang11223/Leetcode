@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class Run {
     public static void main(String[] args) {
-        new Run(new int[]{1, 2, 3}, new int[]{1, 3, 2});
-        new Run(new int[]{3, 2, 1}, new int[]{1, 2, 3});
-        new Run(new int[]{1, 1, 5}, new int[]{1, 5, 1});
+        new Run(new int[]{1, 2, 3});
+        new Run(new int[]{3, 2, 1});
+        new Run(new int[]{1, 1, 5});
     }
 
     public void nextPermutation(int[] nums) {
@@ -38,8 +38,7 @@ public class Run {
         nums[right] = tmp;
     }
 
-    Run(int[] s, int[] test) {
+    public Run(int[] s) {
         nextPermutation(s);
-        System.out.println(Arrays.toString(s) + " " + Arrays.equals(s, test));
     }
 }
