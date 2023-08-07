@@ -1,3 +1,4 @@
+import LC71.Run71;
 import lc31.Run;
 import lc34.Run34;
 import lc49.Run49;
@@ -7,8 +8,6 @@ import lc56.Run56;
 import lc65.Run65;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -113,5 +112,14 @@ public class RunTest {
         assertFalse(r.isNumber(".e1"));
         assertFalse(r.isNumber("92e1740e91"));
         assertFalse(r.isNumber("+.E3"));
+    }
+
+    @Test
+    void run71() {
+        Run71 r = new Run71();
+        assertEquals("/home", r.simplifyPath("/home/"));
+        assertEquals("/", r.simplifyPath("/../"));
+        assertEquals("/home/test/gest/.../mest", r.simplifyPath("/home/test/rest/best/../../gest/.../mest"));
+        assertEquals("/home/test/gest/mest", r.simplifyPath("/home/test/rest/best/../../gest/./mest"));
     }
 }
