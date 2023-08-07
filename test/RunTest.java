@@ -3,6 +3,7 @@ import lc34.Run34;
 import lc49.Run49;
 import lc50.Run50;
 import lc54.Run54;
+import lc56.Run56;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -71,5 +72,22 @@ public class RunTest {
         assertEquals(List.of(1, 2, 3, 6, 9, 8, 7, 4, 5), r.spiralOrder(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
         assertEquals(List.of(1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7), r.spiralOrder(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}));
         assertEquals(List.of(1, 2), r.spiralOrder(new int[][]{{1}, {2}}));
+    }
+
+    @Test
+    void run56() {
+        Run56 r = new Run56();
+        assertArrayEquals(new int[][]{{1, 6}, {8, 10}, {15, 18}},
+                r.merge(new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}}));
+        assertArrayEquals(new int[][]{{1, 5}},
+                r.merge(new int[][]{{1, 4}, {4, 5}}));
+        assertArrayEquals(new int[][]{{1, 18}},
+                r.merge(new int[][]{{1, 16}, {2, 15}, {3, 14}, {4, 18}}));
+        assertArrayEquals(new int[][]{{1, 6}, {8, 10}, {15, 18}},
+                r.merge(new int[][]{{1, 3}, {8, 10}, {15, 18}, {2, 6}}));
+        assertArrayEquals(new int[][]{{1, 16}},
+                r.merge(new int[][]{{1, 16}, {2, 15}}));
+        assertArrayEquals(new int[][]{{0, 4}},
+                r.merge(new int[][]{{1, 4}, {0, 4}}));
     }
 }
