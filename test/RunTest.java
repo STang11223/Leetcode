@@ -1,6 +1,7 @@
 import lc31.Run;
 import lc34.Run34;
 import lc49.Run49;
+import lc50.Run50;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -49,5 +50,17 @@ public class RunTest {
         ret = r.groupAnagrams(new String[]{"a"});
         compare = List.of(List.of("a"));
         assertTrue(ret.containsAll(compare));
+    }
+
+    @Test
+    void run50() {
+        Run50 r = new Run50();
+        assertEquals(1024.00000, r.myPow(2, 10));
+        assertEquals(9.261, r.myPow(2.1, 3));
+        assertEquals(0.25, r.myPow(2, -2));
+        assertEquals(700.28148, r.myPow(8.88023, 3));
+        assertEquals(0.00000, r.myPow(2.00000, -2147483648));
+        assertEquals(0.00000, r.myPow(0.00001, 2147483647));
+        assertEquals(2e-05, r.myPow(8.84372, -5));
     }
 }
