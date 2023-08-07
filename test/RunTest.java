@@ -2,6 +2,7 @@ import lc31.Run;
 import lc34.Run34;
 import lc49.Run49;
 import lc50.Run50;
+import lc54.Run54;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -62,5 +63,13 @@ public class RunTest {
         assertEquals(0.00000, r.myPow(2.00000, -2147483648));
         assertEquals(0.00000, r.myPow(0.00001, 2147483647));
         assertEquals(2e-05, r.myPow(8.84372, -5));
+    }
+
+    @Test
+    void run54() {
+        Run54 r = new Run54();
+        assertEquals(List.of(1, 2, 3, 6, 9, 8, 7, 4, 5), r.spiralOrder(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
+        assertEquals(List.of(1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7), r.spiralOrder(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}));
+        assertEquals(List.of(1, 2), r.spiralOrder(new int[][]{{1}, {2}}));
     }
 }
