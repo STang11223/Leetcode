@@ -1,7 +1,6 @@
-package LC71;
+package lc71;
 
 import java.util.Stack;
-import java.util.stream.Collectors;
 
 public class Run71 {
     public String simplifyPath(String path) {

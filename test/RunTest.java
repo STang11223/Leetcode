@@ -1,4 +1,4 @@
-import LC71.Run71;
+import lc71.Run71;
 import lc31.Run;
 import lc34.Run34;
 import lc49.Run49;
