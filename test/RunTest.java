@@ -4,6 +4,7 @@ import lc49.Run49;
 import lc50.Run50;
 import lc54.Run54;
 import lc56.Run56;
+import lc65.Run65;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -89,5 +90,28 @@ public class RunTest {
                 r.merge(new int[][]{{1, 16}, {2, 15}}));
         assertArrayEquals(new int[][]{{0, 4}},
                 r.merge(new int[][]{{1, 4}, {0, 4}}));
+    }
+
+    @Test
+    void run65() {
+        Run65 r = new Run65();
+        assertTrue(r.isNumber("0"));
+        assertTrue(r.isNumber("53.5e93"));
+        assertTrue(r.isNumber("-.9"));
+        assertTrue(r.isNumber("+6e-1"));
+        assertTrue(r.isNumber("-90E3"));
+        assertTrue(r.isNumber("-123.456e789"));
+        assertTrue(r.isNumber(".1"));
+        assertTrue(r.isNumber("46.e3"));
+        assertFalse(r.isNumber("abc"));
+        assertFalse(r.isNumber("99e2.5"));
+        assertFalse(r.isNumber("--6"));
+        assertFalse(r.isNumber("-+3"));
+        assertFalse(r.isNumber("4e+"));
+        assertFalse(r.isNumber("+."));
+        assertFalse(r.isNumber("+E3"));
+        assertFalse(r.isNumber(".e1"));
+        assertFalse(r.isNumber("92e1740e91"));
+        assertFalse(r.isNumber("+.E3"));
     }
 }
